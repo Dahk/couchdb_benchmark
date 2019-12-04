@@ -15,12 +15,11 @@ Pywren as the readers/writers clients.
 It uses rabbitmq to synchronize all the functions and to trigger
 the benchmark at the same time for all of them.
 
-Also, every function uses a unique key to perform actions to
-a document. So, a function always treats the same document but that is
-different among all other functions.
+Also, each function deals with the same unique document, different
+among all other functions.
 
 When the test starts, every function starts writing/reading for as
-long as a fixed amount of time (burst_time), saving the timestamp
+long as a fixed amount of time (burst_time), saving the timestamps
 for every action.
 
 
@@ -53,17 +52,17 @@ among all invokes of reads/writes actions on each second (or intervals [0,1), [1
 
 ## Some results
 
-![graph](/plots/couchdb_600writers_20sec_250bytes_sum.png)
-![graph](/plots/couchdb_600readers_20sec_250bytes_sum.png)
-![graph](/plots/couchdb_950writers_20sec_250bytes_sum.png)
-![graph](/plots/couchdb_950readers_20sec_250bytes_sum.png)
+<img src="./plots/couchdb_600writers_20sec_250bytes_sum.png" width="450" height="300">
+<img src="./plots/couchdb_600readers_20sec_250bytes_sum.png" width="450" height="300">
+<img src="./plots/couchdb_950writers_20sec_250bytes_sum.png" width="450" height="300">
+<img src="./plots/couchdb_950readers_20sec_250bytes_sum.png" width="450" height="300">
 
 ### Hardware used:
-Instance:   Balanced B1.2x4\
-CPU:        2x vCPU\
-RAM:        4GB\
-Bandwidth:  1Gbps\
-OS:         Ubuntu Linux 18.04 LTS Bionic Beaver Minimal Install (64 bit)
+ - Instance: Balanced B1.2x4\
+ - CPU: 2x vCPU\
+ - RAM: 4GB\
+ - Bandwidth: 1Gbps\
+ - OS: Ubuntu Linux 18.04 LTS Bionic Beaver Minimal Install (64 bit)\
 Both server and functions shared the same region (London).
 
 ### Observations:
@@ -73,5 +72,15 @@ or even the update of a (small) state.\
 Many graphs show unstability in the server and that might be because
 it is very small in terms of resources, but it serves for comparisons
 with other services.
+
+We can conclude that the average throughput settles at around 1200 writes per
+second and 1300 reads per second.
+
+<img src="./plots/couchdb_600writers_20sec_25000bytes_sum.png" width="450" height="300">
+<img src="./plots/couchdb_600readers_20sec_25000bytes_sum.png" width="450" height="300">
+
+Finally, we these are the graphs showing the results of running the test using message/document
+sizes of 25kB. We can observe that the increase in size only affected the throughput by roughly
+a 10%.
 
 
