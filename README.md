@@ -9,10 +9,10 @@
 
 
 This benchmark tests the write/read speed that a single
-couchdb server can handle, using IBM Cloud Functions with
+Couchdb server can handle, using IBM Cloud Functions with
 Pywren as the readers/writers clients.
 
-It uses rabbitmq to synchronize all the functions and to trigger
+It uses Rabbitmq to synchronize all the functions and to trigger
 the benchmark at the same time for all of them.
 
 Also, each function deals with the same unique document, different
