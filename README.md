@@ -25,18 +25,18 @@ for every action.
 
 ## Replication
 
-Only one script is used to run this test, and that is [bm_couchdb.py](/bm_couchdb.py)\
-Documents are also referred to as messages.
+Only one script is used to run this test, and that is [`bm_couchdb.py`](/bm_couchdb.py)\
+You must also edit the variable *COUCHDB_ENDPOINT* which holds the endpoint to the
+couchdb server.
 
 ```
   python3 bm_couchdb.py -n <num_action_performers> -t <burst_time_sec> -s <msg_size_bytes>
 ```
 
-You must also edit the variable *COUCHDB_ENDPOINT* which holds the endpoint to the
-couchdb server.
-
 Two graphs are plotted every time showing the average amount and the total amount\
 among all invokes of reads/writes actions on each second (or intervals [0,1), [1,2) ...).
+
+Note: thoughout the documentation, documents are also referred to as messages.
 
 ### Examples
 
