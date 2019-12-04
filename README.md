@@ -58,11 +58,11 @@ among all invokes of reads/writes actions on each second (or intervals [0,1), [1
 <img src="./plots/couchdb_950readers_20sec_250bytes_sum.png" width="450" height="300">
 
 ### Hardware used:
- - Instance: Balanced B1.2x4\
- - CPU: 2x vCPU\
- - RAM: 4GB\
- - Bandwidth: 1Gbps\
- - OS: Ubuntu Linux 18.04 LTS Bionic Beaver Minimal Install (64 bit)\
+ - Instance: Balanced B1.2x4
+ - CPU: 2x vCPU
+ - RAM: 4GB
+ - Bandwidth: 1Gbps
+ - OS: Ubuntu Linux 18.04 LTS Bionic Beaver Minimal Install (64 bit)
 Both server and functions shared the same region (London).
 
 ### Observations:
