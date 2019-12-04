@@ -79,7 +79,7 @@ second and 1300 reads per second.
 <img src="./plots/couchdb_600writers_20sec_25000bytes_sum.png" width="450" height="300">
 <img src="./plots/couchdb_600readers_20sec_25000bytes_sum.png" width="450" height="300">
 
-Finally, we these are the graphs showing the results of running the test using message/document
+Finally, these are the graphs showing the results of running the test using message/document
 sizes of 25kB. We can observe that the increase in size only affected the throughput by roughly
 a 10%.
 
