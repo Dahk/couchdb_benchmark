@@ -4,7 +4,7 @@
  - [PyWren from Cloudbutton Toolkit](https://github.com/pywren/pywren-ibm-cloud)
  - [IBM Virtual Server](https://cloud.ibm.com/catalog/infrastructure/virtual-server-group‎)
  - [Couchdb Server](https://couchdb.apache.org/)
- - [Rabbitmq](https://www.rabbitmq.com/)
+ - [RabbitMQ](https://www.rabbitmq.com/)
  - Python 3.6
 
 
@@ -12,7 +12,7 @@ This benchmark tests the write/read speed that a single
 Couchdb server can handle, using IBM Cloud Functions with
 Pywren as the readers/writers clients.
 
-It uses Rabbitmq to synchronize all the functions and to trigger
+It uses RabbitMQ to synchronize all the functions and to trigger
 the benchmark at the same time for all of them.
 
 Also, each function deals with the same unique document, different
@@ -20,7 +20,7 @@ among all other functions.
 
 When the test starts, every function starts writing/reading for as
 long as a fixed amount of time (burst_time), saving the timestamps
-for every action.
+for every action performed.
 
 
 ## Replication
@@ -36,7 +36,7 @@ couchdb server.
 Two graphs are plotted every time showing the average amount and the total amount\
 among all invokes of reads/writes actions on each second (or intervals [0,1), [1,2) ...).
 
-Note: thoughout the documentation, documents are also referred to as messages.
+Note: throughout the documentation, documents are also referred to as messages.
 
 ### Examples
 
@@ -62,15 +62,15 @@ Note: thoughout the documentation, documents are also referred to as messages.
  - CPU: 2x vCPU
  - RAM: 4GB
  - Bandwidth: 1Gbps
- - OS: Ubuntu Linux 18.04 LTS Bionic Beaver Minimal Install (64 bit)
+ - OS: Ubuntu Linux 18.04 LTS Bionic Beaver Minimal Install (64 bit)\
 Both server and functions shared the same region (London).
 
 ### Observations:
 
 In this test we use document sizes of 250 bytes to test overhead limits
-or even the update of a (small) state.\
+or even simulate a (small) state update.\
 Many graphs show unstability in the server and that might be because
-it is very small in terms of resources, but it serves for comparisons
+it is very small in terms of resources, but it serves well enough for comparisons
 with other services.
 
 We can conclude that the average throughput settles at around 1200 writes per
